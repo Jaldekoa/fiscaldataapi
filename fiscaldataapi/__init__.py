@@ -6,15 +6,23 @@ __base_url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service"
 
 __all_types = {
     "NUMBER": lambda x: pd.to_numeric(x, errors="coerce"),
-    "CURRENCY3": lambda x: pd.to_numeric(x, errors="coerce"),
     "CURRENCY": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY0": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY1": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY2": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY3": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY4": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY5": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY6": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY7": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY8": lambda x: pd.to_numeric(x, errors="coerce"),
+    "CURRENCY9": lambda x: pd.to_numeric(x, errors="coerce"),
     "MONTH": lambda x: pd.to_numeric(x, errors="coerce"),
     "PERCENTAGE": lambda x: pd.to_numeric(x, errors="coerce"),
     "YEAR": lambda x: pd.to_numeric(x, errors="coerce"),
     "DATE": lambda x: pd.to_datetime(x, errors="coerce", format="%Y-%m-%d"),
     "DAY": lambda x: pd.to_numeric(x, errors="coerce"),
     "INTEGER": lambda x: pd.to_numeric(x, errors="coerce"),
-    "CURRENCY0": lambda x: pd.to_numeric(x, errors="coerce"),
     "QUARTER": lambda x: pd.to_numeric(x, errors="coerce"),
     "STRING": str
 }
