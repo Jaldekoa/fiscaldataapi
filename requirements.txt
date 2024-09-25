@@ -1,0 +1,4 @@
+pandas>=2.0.0
+requests>=2.23.0
+setuptools>=68.2
+pytest>=7.4.4
