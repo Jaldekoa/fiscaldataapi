@@ -8,17 +8,17 @@ LONG_DESCRIPTION = (THIS_PATH / "README.md").read_text(encoding="utf-8")
 
 
 setup(
-    name="nyfedapi",
+    name="fiscaldataapi",
     version=VERSION,
-    url="https://github.com/Jaldekoa/fiscaldata",
+    url="https://github.com/Jaldekoa/fiscaldataapi",
     author="Jon Aldekoa",
     author_email="jaldekoa@gmail.com",
     license="MIT License",
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
-    packages=["fiscaldata"],
-    test_suite='fiscaldata.tests',
+    packages=["fiscaldataapi"],
+    test_suite='fiscaldataapi.tests',
     platforms=["Any"],
     install_requires=["setuptools>=68.2", "pandas>=2.0.0", "requests>=2.23.0"],
     classifiers=[
