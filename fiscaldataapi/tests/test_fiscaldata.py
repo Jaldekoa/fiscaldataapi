@@ -2,6 +2,7 @@ from fiscaldataapi import get_fiscaldata, __endpoints
 import pandas as pd
 import random
 import pytest
+import time
 
 db = random.choices(list(__endpoints.keys()), k=5)
 
