@@ -8,5 +8,5 @@ db = random.choices(list(__endpoints.keys()), k=10)
 
 @pytest.mark.parametrize("database", db)
 def test_info_fiscaldata(database):
-    df = info_fiscaldata(database)
-    assert (isinstance(df, pd.DataFrame) and not df.empty)
+    data_format, total_pages, total_count = info_fiscaldata(database)
+    assert isinstance(data_format, dict) and isinstance(total_pages, int) and isinstance(total_count, int)
