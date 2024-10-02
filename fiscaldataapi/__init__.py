@@ -213,7 +213,7 @@ def __connect_fiscaldata(datatable: str, **kwargs):
     return res
 
 
-def get_fiscaldata(datatable: str, **params) -> pd.DataFrame:
+def get_fiscaldata(datatable: str, **kwargs) -> pd.DataFrame:
     """
     Get FiscalData from Treasury series data.
 
@@ -225,26 +225,27 @@ def get_fiscaldata(datatable: str, **params) -> pd.DataFrame:
         desired fields are not specified, all fields will be returned. When a file name passed to the fields parameter is
         not available for the endpoint accessed, an error will occur.
 
-        filters (str): Filters are used to view a subset of the data based on specific criteria. For example, you may
+        filter (str): Filters are used to view a subset of the data based on specific criteria. For example, you may
         want to find data that falls within a certain date range, or only show records which contain a value larger than
         a certain threshold.  Use a colon at the end of a filter parameter to pass a value or list of values. For lists
         passed as filter criteria, use a comma-separated list within parentheses. Filter for specific dates using the
         format YYYY-MM-DD. When no filters are provided, the default response will return all fields and all data.
 
-        sorting (str): The sort parameter allows a user to sort a field in ascending (least to greatest) or descending
+        sort (str): The sort parameter allows a user to sort a field in ascending (least to greatest) or descending
         (greatest to least) order. The sort parameter accepts a comma-separated list of field names. When no sort
         parameter is specified, the default is to sort by the first column listed.
 
-        pagination (str): The page size will set the number of rows that are returned on a request, and page number will
-        set the index for the pagination, starting at 1. This allows the user to paginate through the records returned
-        from an API request. When no sort parameter is specified, the default is to sort by the first column listed.
-        Most API endpoints are thus sorted by date in ascending order (historical to most current).
+        page_size (int or str): The page size will set the number of rows that are returned on a request. When no
+        page size parameter is specified, the default response is 100.
+
+        page_number (int or str): The page number will set the index for the pagination, starting at 1. When no page
+        number is specified, the default response is 1.
 
     Returns:
         pd.DataFrame: Dataframe containing the FiscalData endpoint table data.
     """
 
-    res = __connect_fiscaldata(datatable)
+    res = __connect_fiscaldata(datatable, **kwargs)
     data, labels, dtypes = res["data"], res["meta"]["labels"], res["meta"]["dataTypes"]
     df = pd.DataFrame.from_records(data)
 
