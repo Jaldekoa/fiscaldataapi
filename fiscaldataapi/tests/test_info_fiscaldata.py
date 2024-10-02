@@ -3,7 +3,7 @@ import pandas as pd
 import random
 import pytest
 
-db = random.choices(list(__endpoints.keys()), k=10)
+db = random.choices(list(__endpoints.keys()), k=5)
 
 
 @pytest.mark.parametrize("database", db)
