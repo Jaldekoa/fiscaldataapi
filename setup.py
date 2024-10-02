@@ -1,7 +1,7 @@
 from setuptools import setup
 from pathlib import Path
 
-VERSION = "0.0.2"
+VERSION = "0.0.3"
 THIS_PATH = Path(__file__).parent
 DESCRIPTION = "A Python wrapper to easily retrieve data from the Fiscal Data (US Treasury) official API in pandas format."
 LONG_DESCRIPTION = (THIS_PATH / "README.md").read_text(encoding="utf-8")

@@ -254,3 +254,9 @@ def get_fiscaldata(datatable: str, **kwargs) -> pd.DataFrame:
 
     df.columns = [el for el in labels.values()]
     return df
+
+
+def info_fiscaldata(database: str):
+    url = f"{__base_url}{__endpoints[database]}"
+    res = requests.get(url).json()
+    return res["meta"]["dataFormats"], res["meta"]["total-pages"], res["meta"]["total-count"]
