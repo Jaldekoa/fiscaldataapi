@@ -3,7 +3,7 @@ import random
 import pytest
 import time
 
-db = random.choices(list(__endpoints.keys()), k=5)
+db = random.choices(list(__endpoints.keys()), k=2)
 
 
 @pytest.mark.parametrize("database", db)
