@@ -3,7 +3,6 @@ import pandas as pd
 import requests
 
 __base_url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service"
-
 __all_types = {
     "NUMBER": lambda x: pd.to_numeric(x, errors="coerce"),
     "CURRENCY": lambda x: pd.to_numeric(x, errors="coerce"),

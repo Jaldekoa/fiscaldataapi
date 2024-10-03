@@ -7,7 +7,6 @@ DESCRIPTION = ("A Python wrapper to easily retrieve data from the Fiscal Data (U
                "format.")
 LONG_DESCRIPTION = (THIS_PATH / "README.md").read_text(encoding="utf-8")
 
-
 setup(
     name="fiscaldataapi",
     version=VERSION,
