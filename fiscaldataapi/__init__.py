@@ -256,6 +256,15 @@ def get_fiscaldata(datatable: str, **kwargs) -> pd.DataFrame:
 
 
 def info_fiscaldata(database: str):
+    """
+    Get information of a FiscalData table.
+
+    Args:
+        datatable (str): Table name of the endpoint
+
+    Returns:
+        tuple(dict, int, int): Dictionary with the format of the table columns, the number of pages of table data (each page has up to 100 rows) and number of total rows of table data.
+    """
     url = f"{__base_url}{__endpoints[database]}"
-    res = requests.get(url).json()
+    res = requests.get(url, timeout=10).json()
     return res["meta"]["dataFormats"], res["meta"]["total-pages"], res["meta"]["total-count"]

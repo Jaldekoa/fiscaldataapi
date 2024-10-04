@@ -2,7 +2,7 @@ from fiscaldataapi import info_fiscaldata, __endpoints
 import random
 import pytest
 
-db = random.choices(list(__endpoints.keys()), k=2)
+db = random.choices(list(__endpoints.keys()), k=5)
 
 
 @pytest.mark.parametrize("database", db)
